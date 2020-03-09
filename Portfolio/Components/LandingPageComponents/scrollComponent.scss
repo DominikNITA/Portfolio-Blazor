@@ -1,0 +1,50 @@
+﻿@import "../../Styles/colorScheme.scss";
+.scroll {
+    position: absolute;
+    bottom: 0;
+    width: 1.9rem;
+    height: 3.5rem;
+    border: 3px solid $secondary-color;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    z-index: 5;
+
+    &_wheel {
+        background-color: $highlight-color;
+        width: 40%;
+        height: 25%;
+        margin: 2px auto;
+        border-radius: 0.6rem;
+        animation: scroll-movement 1.65s infinite;
+        animation-delay: 0.4s;
+        animation-direction: normal;
+        z-index: auto;
+    }
+}
+
+
+@keyframes scroll-movement {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+
+    70% {
+        opacity: 0;
+        transform: translateY(270%);
+    }
+
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 576px) {
+
+}

@@ -1,6 +1,26 @@
-﻿.landing-page {
+﻿@import "../Components/LandingPageComponents/scrollComponent.scss";
+@import "../Components/LandingPageComponents/backgroundComponent.scss";
+@import "../Components/LandingPageComponents/headerComponent.scss";
+@import "../Styles/colorScheme.scss";
+
+
+.landing-page {
     width: 100%;
     height: 100vh;
-    background-color: rgb(23, 31, 57);
-    color: white;
+    display: flex;
+    /*background-color: $main-color;*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $main-text;
+
+    * {
+        z-index: 3;
+    }
 }
+
+
+
+
+

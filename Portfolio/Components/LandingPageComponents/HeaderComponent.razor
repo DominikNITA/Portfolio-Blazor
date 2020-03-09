@@ -1,0 +1,57 @@
+﻿<div class="header">
+    <div class="header__content">
+        <div class="header__name">
+            @Name
+        </div>
+        <div class="header__sub-title @_animationStyle">
+            @if (IsSubTitleAnimated)
+            {
+                @_actualSubTitle
+                @*<div class="header__placeholder">
+                    @SubTitle
+                </div>*@
+            }
+            else
+            {
+                @SubTitle
+            }
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter] public string Name { get; set; }
+    [Parameter] public string SubTitle { get; set; }
+    [Parameter] public bool IsSubTitleAnimated { get; set; } = false;
+    [Parameter] public int Delay { get; set; } = 0;
+    [Parameter] public int Period { get; set; }
+
+    private string _actualSubTitle = string.Empty;
+    private string _animationStyle = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (IsSubTitleAnimated)
+        {
+            await Task.Delay(Delay);
+            _animationStyle = "animated";
+            GetNextCharacter();
+        }
+    }
+
+    private async void GetNextCharacter()
+    {
+        _actualSubTitle += SubTitle[_actualSubTitle.Length];
+        StateHasChanged();
+        if (_actualSubTitle.Length < SubTitle.Length)
+        {
+            await Task.Delay(Period);
+            GetNextCharacter();
+        }
+        else
+        {
+            IsSubTitleAnimated = false;
+            _animationStyle = string.Empty;
+            StateHasChanged();
+        }
+    }
+}
