@@ -1,0 +1,40 @@
+﻿@import "../../Styles/colorScheme.scss";
+@import "../../Styles/utilities.scss";
+
+.tab {
+    background-color: $main-text;
+    border-radius: 14px;
+    margin: 10px 15px;
+    overflow: hidden;
+    box-shadow: 3px 5px 0px 0px $highlight-color;
+    min-width: 15rem;
+    max-width: 85%;
+
+
+    &__title {
+        color: $highlight-color;
+        font-size: 1.6rem;
+        font-weight: bolder;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        background-color: $main-color;
+        padding-bottom: 4px;
+    }
+
+    &__title + div {
+        padding: 0.7rem 1rem;
+    }
+
+    &__list {
+        @include flex-column;
+        text-align: center;
+        margin: auto 0;
+    }
+
+    &__item {
+        color: $main-color;
+        font-size: 1.2rem;
+        /*font-weight: bold;*/
+    }
+}

@@ -1,0 +1,7 @@
+﻿@import "../Styles/colorScheme.scss";
+@import "../Styles/utilities.scss";
+.projects{
+    min-height: 50rem;
+    background-color: $main-color;
+    color: $main-text;
+}

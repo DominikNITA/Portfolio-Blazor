@@ -1,0 +1,26 @@
+﻿<div class="tab">
+    <div class="tab__title">
+        @Title
+    </div>
+    @if (Listed != null && Listed.Count > 0)
+    {
+        <div class="tab__list">
+            @foreach (var listed in Listed)
+            {
+                <span class="tab__item">@listed</span>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="tab__content">
+            @ChildContent
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public List<string> Listed { get; set; }
+    [Parameter] public string Title { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+}

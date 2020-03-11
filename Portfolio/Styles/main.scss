@@ -1,6 +1,12 @@
 ﻿@import "../Pages/landingPage.scss";
 @import "../Pages/skillsPage.scss";
+@import "../Pages/projectPage.scss";
 @import "colorScheme.scss";
+@import "utilities.scss";
+
+body {
+    box-sizing: border-box;
+}
 
 #blazor-error-ui {
     background: lightyellow;

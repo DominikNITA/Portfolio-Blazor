@@ -1,9 +1,17 @@
-﻿@mixin flex-column(){
+﻿@mixin flex-column() {
     display: flex;
     flex-direction: column;
 }
 
-@mixin flex-row(){
+@mixin flex-row() {
     display: flex;
     flex-direction: row;
+}
+
+@mixin title-general($color, $shadow-color) {
+    font-size: 4rem;
+    font-weight: bold;
+    color: $color;
+    text-shadow: 1px 1px $shadow-color;
+    text-align: center;
 }

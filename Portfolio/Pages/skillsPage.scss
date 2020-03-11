@@ -1,20 +1,32 @@
 ﻿@import "../Styles/colorScheme.scss";
 @import "../Styles/utilities.scss";
+@import "../Components/SkillsPageComponents/skillTab.scss";
 
 .skills {
     background-color: $secondary-color;
     color: $secondary-text;
     min-height: 15rem;
-    * {
+    /** {
         margin: auto;
         font-size: 1.1rem;
         font-weight: bold;
-    }
-
+    }*/
     &__content {
-        @include flex-row();
-        width: 50%;
+        @include flex-column();
+        justify-content: center;
+        min-width: 50%;
+        width: auto;
         padding: 20px 0;
         margin: auto;
+
+        & > * {
+            padding: 5px 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__title {
+        @include title-general($main-color, $highlight-color);
     }
 }

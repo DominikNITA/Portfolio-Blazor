@@ -1,21 +1,48 @@
-﻿<div class="skills">
-    <div class="skills__title"></div>
+﻿@using Portfolio.Components.SkillsPageComponents
+<div class="skills">
+    <div class="skills__title">
+        Skills
+    </div>
     <div class="skills__content">
-        <div class="about">
-            Currently learning Software Engineering at Polytech Paris-Saclay
+        <div class="skills__about justify-content-center">
+            <SkillsTab Title="About">Currently learning Software Engineering at Polytech Paris-Saclay.</SkillsTab>
         </div>
-        <div class="languages">
-            C# <br />
-            Java <br />
-            Python <br />
-            C++ <br />
-        </div>
-        <div class="tools">
-            Visual Studio <br />
-            Github <br />
+        <div class="skills__row justify-content-center">     
+            <SkillsTab Title="Languages" Listed="Languages"></SkillsTab>
+            <SkillsTab Title="Tools" Listed="Tools"></SkillsTab>
+            <SkillsTab Title="Others" Listed="Others"></SkillsTab>
         </div>
     </div>
 </div>
 @code {
+    public List<string> Languages { get; set; }
+    public List<string> Tools { get; set; }
+    public List<string> Others { get; set; }
 
+    protected override Task OnInitializedAsync()
+    {
+        Languages = new List<string> {
+            "C#",
+            "Java",
+            "Python",
+            "C++",
+            "HTML(Bootstrap, Sass)"
+        };
+        Tools = new List<string> {
+            "Visual Studio",
+            "Github",
+            "Trello/Team Foundation",
+            "Heroku Hosting"
+        };
+
+        Others = new List<string>
+        {
+            "Agile/Kanban",
+            "TDD",
+            "something",
+            "TO FIND!"
+        };
+
+        return base.OnInitializedAsync();
+    }
 }
