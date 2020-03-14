@@ -2,6 +2,7 @@
 @import "../../Styles/utilities.scss";
 
 .tab {
+    @include flex-column;
     background-color: $main-text;
     border-radius: 14px;
     margin: 10px 15px;
@@ -9,7 +10,6 @@
     box-shadow: 3px 5px 0px 0px $highlight-color;
     min-width: 15rem;
     max-width: 85%;
-
 
     &__title {
         color: $highlight-color;

@@ -1,9 +1,45 @@
-﻿<div class="scroll">
-    <div class="scroll_wheel">
+﻿@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRun
+<a href="#skills">
+    <div class="scroll">
+        <div class="scroll_wheel">
 
+        </div>
     </div>
-</div>
+</a>
+
 
 @code {
+    protected override void OnInitialized()
+    {
+        NavigateToElement();
+        NavigationManager.LocationChanged += OnLocationChanges;
+    }
 
+    private void OnLocationChanges(object sender, LocationChangedEventArgs e) => NavigateToElement();
+
+    private async void NavigateToElement()
+    {
+        var url = NavigationManager.Uri;
+        var fragment = new Uri(url).Fragment;
+
+        if (string.IsNullOrEmpty(fragment))
+        {
+            return;
+        }
+
+        var elementId = fragment.StartsWith("#") ? fragment.Substring(1) : fragment;
+
+        if (string.IsNullOrEmpty(elementId))
+        {
+            return;
+        }
+
+        await ScrollToElementId(elementId);
+    }
+
+    private async Task<bool> ScrollToElementId(string elementId)
+    {
+        return await JSRun.InvokeAsync<bool>("scrollToElementId", elementId);
+    }
 }

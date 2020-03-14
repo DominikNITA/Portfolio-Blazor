@@ -23,7 +23,7 @@
 
 @media (min-width: 768px){
     .background-overlay {
-        background: radial-gradient(circle at 95% 95%, rgba(0,0,0,0) 0%, $main-color 25%);
+        background: radial-gradient(circle at 95% 95%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 10%, $main-color 25%);
     }  
 }
 

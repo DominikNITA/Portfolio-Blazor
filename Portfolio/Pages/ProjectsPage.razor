@@ -1,8 +1,21 @@
-﻿<div class="projects">
-    My projects
-    YO!
+﻿@using Portfolio.Services
+@using Portfolio.Models
+@using Portfolio.Components.ProjectsPageComponents
+@inject ProjectsContainer ProjectsContainer
+
+<div class="projects" id="projects">
+    @foreach (var project in _projects)
+    {
+        <ProjectComponent Project="project"></ProjectComponent>
+    }
 </div>
 
 @code {
+    private List<Project> _projects;
 
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _projects = ProjectsContainer.Projects;
+    }
 }

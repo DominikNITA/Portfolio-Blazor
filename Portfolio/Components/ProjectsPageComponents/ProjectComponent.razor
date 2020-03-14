@@ -1,0 +1,18 @@
+﻿@using Portfolio.Models
+<div class="project">
+    <div class="project__content">
+        <div class="project__title">
+            @Project.Name
+        </div>
+        <div class="project__image-container">
+            <img src="@Project.ImageSource" class="project__image"/>
+        </div>
+        <div class="project__description">
+            @Project.Description
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public Project Project { get; set; }
+}

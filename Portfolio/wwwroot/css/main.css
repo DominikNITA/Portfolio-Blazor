@@ -54,7 +54,7 @@
 
 @media (min-width: 768px) {
   .background-overlay {
-    background: radial-gradient(circle at 95% 95%, transparent 0%, #171f39 25%); } }
+    background: radial-gradient(circle at 95% 95%, transparent 0%, transparent 10%, #171f39 25%); } }
 
 @media (min-width: 1200px) {
   .background-image {
@@ -131,6 +131,8 @@
 /*$secondary-color: rgb(128, 128, 128);*/
 /*$secondary-color: rgb(128, 128, 128);*/
 .tab {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   border-radius: 14px;
   margin: 10px 15px;
@@ -192,6 +194,9 @@
   min-height: 50rem;
   background-color: #171f39;
   color: white; }
+
+.credits {
+  min-height: 40rem; }
 
 /*$secondary-color: rgb(128, 128, 128);*/
 body {
