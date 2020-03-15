@@ -1,0 +1,105 @@
+﻿@using Portfolio.Models
+
+@switch (Technology)
+{
+    case Project.Technology.Android:
+        {
+            <i class="devicon-android-plain-wordmark colored"></i>
+            break;
+        }
+    case Project.Technology.Linux:
+        {
+            <i class="devicon-linux-plain colored"></i>
+            break;
+        }
+    case Project.Technology.Windows:
+        {
+            <i class="devicon-windows8-original colored"></i>
+            break;
+        }
+    case Project.Technology.Csharp:
+        {
+            <i class="devicon-csharp-plain colored"></i>
+            break;
+        }
+    case Project.Technology.C:
+        {
+            <i class="devicon-c-plain colored"></i>
+            break;
+        }
+    case Project.Technology.Cplusplus:
+        {
+            <i class="devicon-cplusplus-plain colored"></i>
+            break;
+        }
+    case Project.Technology.Java:
+        {
+            <i class="devicon-java-plain-wordmark colored"></i>
+            break;
+        }
+    case Project.Technology.Python:
+        {
+            <i class="devicon-python-plain-wordmark colored"></i>
+            break;
+        }
+    case Project.Technology.JavaScript:
+        {
+            <i class="devicon-javascript-plain colored"></i>
+            break;
+        }
+    case Project.Technology.React:
+        {
+            <i class="devicon-react-original-wordmark colored"></i>
+            break;
+        }
+    case Project.Technology.Vue:
+        {
+            <i class="devicon-vuejs-plain-wordmark colored"></i>
+            break;
+        }
+    case Project.Technology.HTML:
+        {
+            <i class="devicon-html5-plain-wordmark colored"></i>
+            break;
+        }
+    case Project.Technology.CSS:
+        {
+            <i class="devicon-css3-plain-wordmark colored"></i>
+            break;
+        }
+    case Project.Technology.Bootstrap:
+        {
+            <i class="devicon-bootstrap-plain colored"></i>
+            break;
+        }
+    case Project.Technology.Sass:
+        {
+            <i class="devicon-sass-original colored"></i>
+            break;
+        }
+    case Project.Technology.SQL:
+        {
+            <i class="devicon-csharp-plain colored"></i>
+            break;
+        }
+    case Project.Technology.Heroku:
+        {
+            <i class="devicon-heroku-plain-wordmark colored"></i>
+            break;
+        }
+    case Project.Technology.Postgresql:
+        {
+            <i class="devicon-postgresql-plain-wordmark colored"></i>
+            break;
+        }
+    default:
+        <div>
+            No Technologies used :(
+        </div>
+        break;
+}
+
+@code {
+    [Parameter]
+    public Project.Technology Technology { get; set; }
+}

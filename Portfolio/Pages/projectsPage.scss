@@ -1,7 +1,25 @@
-﻿@import "../Styles/colorScheme.scss";
+﻿@import "../Components/ProjectsPageComponents/projectComponent.scss";
+@import "../Components/ProjectsPageComponents/projectDetailsComponent.scss";
+
+@import "../Styles/colorScheme.scss";
 @import "../Styles/utilities.scss";
-.projects{
-    min-height: 50rem;
+
+.projects {
+    @include flex-column;
     background-color: $main-color;
     color: $main-text;
+    align-items: center;
+
+    &__row {
+        @include flex-row;
+        justify-content: center;
+        flex-wrap: wrap;
+        min-width: 50%;
+        max-width: 70rem;
+        margin: 2rem 0;
+    }
+
+    &__title {
+        @include title-general($secondary-color, $highlight-color);
+    }
 }

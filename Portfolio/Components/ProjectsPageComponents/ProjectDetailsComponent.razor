@@ -1,0 +1,17 @@
+﻿@using Portfolio.Models
+<div class="project__details">
+    <div class="project__description">
+        @Project.Description
+    </div>
+    <div class="project__buttons">
+        <a href="@Project.DemoLink">
+            Demo
+        </a>
+        <a href="@Project.CodeLink">
+            Code
+        </a>
+    </div>
+</div>
+@code {
+    [Parameter] public Project Project { get; set; }
+}

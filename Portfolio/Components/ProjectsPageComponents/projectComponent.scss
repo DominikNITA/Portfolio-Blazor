@@ -1,2 +1,37 @@
-﻿body {
+﻿@import "../../Styles/utilities.scss";
+@import "../../Styles/colorScheme.scss";
+
+.project {
+    @include tab($secondary-color, $highlight-color, $main-color, $secondary-color);
+    width: 20rem;
+
+    &__title + div {
+        width: 100%;
+        height: 10rem;
+    }
+
+    &__image-container {
+        display: flex;
+    }
+
+    &__image {
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    &__technologies {
+        @include flex-row;
+        justify-items: center;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        height: 4rem;
+
+        & > i {
+            font-size: 3rem;
+            margin: auto 5px;
+        }
+    }
 }

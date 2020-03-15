@@ -4,10 +4,15 @@
 @inject ProjectsContainer ProjectsContainer
 
 <div class="projects" id="projects">
-    @foreach (var project in _projects)
-    {
-        <ProjectComponent Project="project"></ProjectComponent>
-    }
+    <div class="projects__title">
+        Projects
+    </div>
+    <div class="projects__row">
+        @foreach (var project in _projects)
+        {
+            <ProjectComponent Project="project"></ProjectComponent>
+        }
+    </div>
 </div>
 
 @code {

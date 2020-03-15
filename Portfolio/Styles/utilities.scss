@@ -12,6 +12,27 @@
     font-size: 4rem;
     font-weight: bold;
     color: $color;
-    text-shadow: 1px 1px $shadow-color;
+    text-shadow: 3px 3px $shadow-color;
     text-align: center;
+}
+
+@mixin tab($background-color,$shadow-color,$title-text,$title-background) {
+    min-width: 15rem;
+    max-width: 85%;
+    background-color: $background-color;
+    border-radius: 14px;
+    margin: 1rem 15px;
+    overflow: hidden;
+    box-shadow: 3px 5px 0px 0px $shadow-color;
+
+    &__title {
+        color: $title-text;
+        font-size: 1.6rem;
+        font-weight: bolder;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        background-color: $title-background;
+        padding-bottom: 4px;
+    }
 }

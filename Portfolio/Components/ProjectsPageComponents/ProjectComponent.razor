@@ -1,18 +1,45 @@
 ﻿@using Portfolio.Models
-<div class="project">
+<div class="project" @onclick="OnMouseOver" >
     <div class="project__content">
         <div class="project__title">
             @Project.Name
         </div>
-        <div class="project__image-container">
-            <img src="@Project.ImageSource" class="project__image"/>
-        </div>
-        <div class="project__description">
-            @Project.Description
+        @if (_isDescriptionShown)
+        {
+            @*<ProjectDetailsComponent Project="Project"></ProjectDetailsComponent>*@
+            <div class="project__details" >
+                <div class="project__description" >
+                    @Project.Description
+                </div>
+                <div class="project__buttons" @onclick:stopPropagation>
+                    <a href="@Project.DemoLink" target="_blank">
+                        Demo
+                    </a>
+                    <a href="@Project.CodeLink" target="_blank">
+                        Code
+                    </a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="project__image-container">
+                <img src="@Project.ImageSource" class="project__image" />
+            </div>
+        }
+        <div class="project__technologies">
+            @foreach (var technology in Project.Technologies)
+            {
+                <TechnologyComponent Technology="technology"></TechnologyComponent>
+            }
         </div>
     </div>
 </div>
 
 @code {
     [Parameter] public Project Project { get; set; }
+    private bool _isDescriptionShown = false;
+
+    private void OnMouseOver() => _isDescriptionShown = !_isDescriptionShown;
+    private void OnMouseOut() => _isDescriptionShown = false;
 }

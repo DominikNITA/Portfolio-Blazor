@@ -1,0 +1,14 @@
+﻿@import "../../Styles/utilities.scss";
+@import "../../Styles/colorScheme.scss";
+
+.project{
+    &__details{
+        @include flex-column;
+    }
+    &__description{
+        padding: 7px 10px;
+    }
+    &__buttons{
+        @include flex-row;
+    }
+}
